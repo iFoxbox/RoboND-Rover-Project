@@ -131,7 +131,7 @@ def perception_step(Rover):
     warped = perspect_transform(Rover.img, source, destination)
     
     #check pitch and Yaw to see if this data can be maped 
-    if (Rover.roll >=2 or Rover.roll <= 358)and Rover.pitch >= 2: 
+    if (Rover.roll >=2 and Rover.roll <= 358)or (Rover.pitch >=2 and Rover.pitch <= 358): 
         mapable = False 
     else:
         mapable = True 
