@@ -24,26 +24,8 @@ def decision_step(Rover):
                 else: # Else coast
                     Rover.throttle = 0
                 Rover.brake = 0
-                
-                #if a rock sample is seen turn tword it and retreave 
-                if Rover.samples_found > Rover.samples_picked:
-                    
-                    Rover.steer = np.clip(np.mean(Rover.rock_angles * 180/np.pi), -15, 15)
-                    #If the sample is close enough, stop and collect 
-                    if  Rover.near_sampe > 0  : 
-                        Rover.throttle = 0 
-                        Rover.brake = Rover.brake_set 
-                        Rover.steer = 0 
-                        Rover.mode = 'stop'
-                        
-                        #attempt collection 
-                        Rover.send_pickup = True 
-                       
-                        
-                else: 
-                    # Set steering to average angle clipped to the range +/- 15
-                    Rover.steer = np.clip(np.mean(Rover.nav_angles * 180/np.pi), -15, 15)
-                    
+                # Set steering to average angle clipped to the range +/- 15
+                Rover.steer = np.clip(np.mean(Rover.nav_angles * 180/np.pi), -15, 15)
             # If there's a lack of navigable terrain pixels then go to 'stop' mode
             elif len(Rover.nav_angles) < Rover.stop_forward:
                     # Set mode to "stop" and hit the brakes!
