@@ -35,17 +35,20 @@ def highlight_rock(img, upper_thresh=(255, 255, 75), lower_thresh=(100, 100, 0))
     # Return the binary image
     return color_select
 #Fucntion to detect obsticles 
-def find_ubstruction(img, rgb_thresh=(160, 160, 160)):
+def find_ubstruction(img, upper_thresh=(140, 140, 140), lower_thresh=(1, 1, 1)):
     # Create an array of zeros same xy size as img, but single channel
     color_select = np.zeros_like(img[:,:,0])
     # Require that each pixel be above all three threshold values in RGB
-    # below_thresh will now contain a boolean array with "True"
+    # between_thresh will now contain a boolean array with "True"
     # where threshold was met
-    below_thresh = (img[:,:,0] < rgb_thresh[0]) \
-                & (img[:,:,1] < rgb_thresh[1]) \
-                & (img[:,:,2] < rgb_thresh[2])
+    between_thresh = (img[:,:,0] < upper_thresh[0]) \
+                & (img[:,:,1] < upper_thresh[1]) \
+                & (img[:,:,2] < upper_thresh[2])\
+                & (img[:,:,0] > lower_thresh[0]) \
+                & (img[:,:,1] > lower_thresh[1]) \
+                & (img[:,:,2] > lower_thresh[2])
     # Index the array of zeros with the boolean array and set to 1
-    color_select[below_thresh] = 1
+    color_select[between_thresh] = 1
     # Return the binary image
     return color_select
 
