@@ -100,7 +100,7 @@ def decision_step(Rover):
                 # If we're stopped but see sufficient navigable terrain in front then go!
                 
     else:
-        Rover.throttle = 0 #Rover.throttle_set
+        Rover.throttle = Rover.throttle_set
         Rover.steer = 0
         Rover.brake = 0
         
