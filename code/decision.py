@@ -18,10 +18,6 @@ def trigger_stop(Rover):
 # commands based on the output of the perception_step() function
 def decision_step(Rover):
 
-    # Implement conditionals to decide what to do given perception data
-    # Here you're all set up with some basic functionality but you'll need to
-    # improve on this decision tree to do a good job of navigating autonomously!
-
     # Example:
     # Check if we have vision data to make decisions with
     if Rover.nav_angles is not None:
@@ -90,8 +86,7 @@ def decision_step(Rover):
                     # Set steer to mean angle
                     Rover.steer = np.clip(np.mean(Rover.nav_angles * 180/np.pi), -15, 15)
                     Rover.mode = 'forward'
-    # Just to make the rover do something 
-    # even if no modifications have been made to the code
+    
                 #If a sample is pressent set grab flag 
                 if Rover.near_sample: 
                     Rover.send_pickup = True

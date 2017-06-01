@@ -15,6 +15,8 @@ def color_thresh(img, rgb_thresh=(140, 140, 140)):
     # Index the array of zeros with the boolean array and set to 1
     color_select[above_thresh] = 1
     # Return the binary image
+    
+       
     return color_select
 
 #Define a function to filter our rock colors 
@@ -134,7 +136,7 @@ def perception_step(Rover):
     warped = perspect_transform(Rover.img, source, destination)
     
     #check pitch and Yaw to see if this data can be maped 
-    if (Rover.roll >=2 and Rover.roll <= 358)or (Rover.pitch >=2 and Rover.pitch <= 358): 
+    if (Rover.roll >=1.5 and Rover.roll <= 358.5)or (Rover.pitch >=1.5 and Rover.pitch <= 358.5): 
         mapable = False 
     else:
         mapable = True 
@@ -150,7 +152,11 @@ def perception_step(Rover):
     Rover.vision_image[:,:,0] = ubstruction*255
     Rover.vision_image[:,:,1] = rock_found*255
     Rover.vision_image[:,:,2] = driveable*255
-        
+    
+    #Filter out anything past 4m. The image is inacurate
+    ubstruction[:][0:110] =0 
+    rock_found[:][0:110] =0
+    driveable[:][0:110] =0
 
     # 5) Convert map image pixel values to rover-centric coords
     xpix, ypix = rover_coords(driveable)
@@ -173,9 +179,8 @@ def perception_step(Rover):
                                    scale)
             
     # 7) Update Rover worldmap (to be displayed on right side of screen)
-        # Example: Rover.worldmap[obstacle_y_world, obstacle_x_world, 0] += 1
-        #          Rover.worldmap[rock_y_world, rock_x_world, 1] += 1
-        #          Rover.worldmap[navigable_y_world, navigable_x_world, 2] += 1
+        
+        
     if mapable:
         Rover.worldmap[obstacle_y_world, obstacle_x_world, 0] += 1
         Rover.worldmap[rock_y_world, rock_x_world, 1] += 1
