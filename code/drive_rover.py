@@ -51,7 +51,7 @@ class RoverState():
         self.brake = 0 # Current brake value
         self.nav_angles = None # Angles of navigable terrain pixels
         self.nav_dists = None # Distances of navigable terrain pixels
-        self.rock_angles = None # Angles of rocks pixels
+        self.rock_angles = [] # Angles of rocks pixels
         self.rock_dists = None # Distances of rocks terrain pixels
         self.rockxy = None
         

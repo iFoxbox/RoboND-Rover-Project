@@ -199,9 +199,12 @@ def perception_step(Rover):
     Rover.nav_dists = rover_centric_pixel_distances
     Rover.nav_angles = rover_centric_angles
     Rover.rock_dists = rock_centric_pixel_distances
-    print(Rover.samples_pos)
-    print(Rover.samples_pos[1])
-    programPause = input("Press the <ENTER> key to continue...")
+    
+    Rover.rock_angles = rock_centric_angles
+    
+    #print(Rover.samples_pos)
+    #print(Rover.samples_pos[1])
+    #programPause = input("Press the <ENTER> key to continue...")
 
     
     return Rover
