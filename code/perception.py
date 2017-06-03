@@ -197,8 +197,7 @@ def perception_step(Rover):
     Rover.nav_angles = rover_centric_angles
     Rover.rock_dists = rock_centric_pixel_distances
     Rover.rock_angles = rock_centric_angles
-    if len(Rover.nav_angles) >= 1: 
-        Rover.mode == 'retreaving'
+    
     
     
     return Rover

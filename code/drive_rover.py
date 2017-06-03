@@ -55,7 +55,7 @@ class RoverState():
         self.rock_dists = None # Distances of rocks terrain pixels
         self.ground_truth = ground_truth_3d # Ground truth worldmap
         self.mode = 'forward' # Current mode 
-        self.last_mode = 'forward' #Last mode the rover was in before this run
+        self.last_mode = None #Last mode the rover was in before this run
         self.next_mode = 'forward' #The mode that will be assigned to current mode next roun
         self.throttle_set = 0.2 # Throttle setting when accelerating
         self.brake_set = 10 # Brake setting when braking

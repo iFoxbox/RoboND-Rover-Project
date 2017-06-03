@@ -8,7 +8,7 @@ def trigger_stop(Rover):
     # Set brake to stored brake value
     Rover.brake = Rover.brake_set
     Rover.steer = 0
-    Rover.mode = 'stop'
+    Rover.next_mode = 'stop'
     
    
         
@@ -18,13 +18,13 @@ def trigger_stop(Rover):
 # commands based on the output of the perception_step() function
 def decision_step(Rover):
 
-    # Example:
     # Check if we have vision data to make decisions with
     if Rover.nav_angles is not None:
+        
         # Check for Rover.mode status
         if Rover.mode =='retreaving':
             if len(Rover.rock_angles) >= Rover.stop_forward:  
-                # If mode is forward, navigable terrain looks good 
+                # If rock is forward navigate to it
                 # and velocity is below max, then throttle 
                 if Rover.vel < Rover.max_vel /2:
                     # Set throttle value to throttle setting
@@ -85,7 +85,7 @@ def decision_step(Rover):
                     Rover.brake = 0
                     # Set steer to mean angle
                     Rover.steer = np.clip(np.mean(Rover.nav_angles * 180/np.pi), -15, 15)
-                    Rover.mode = 'forward'
+                    Rover.next_mode = 'forward'
     
                 #If a sample is pressent set grab flag 
                 if Rover.near_sample: 
