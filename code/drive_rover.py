@@ -53,12 +53,10 @@ class RoverState():
         self.nav_dists = None # Distances of navigable terrain pixels
         self.rock_angles = None # Angles of rocks pixels
         self.rock_dists = None # Distances of rocks terrain pixels
-        self.rockxy = None
-        
         self.ground_truth = ground_truth_3d # Ground truth worldmap
 <<<<<<< HEAD
         self.mode = 'forward' # Current mode 
-        self.last_mode = None #Last mode the rover was in before this run
+        self.last_mode = 'forward' #Last mode the rover was in before this run
         self.next_mode = 'forward' #The mode that will be assigned to current mode next round
        
 =======
@@ -118,17 +116,15 @@ def telemetry(sid, data):
         Rover, image = update_rover(Rover, data)
 
         if np.isfinite(Rover.vel):
-<<<<<<< HEAD
+
             #Update the mode of the rover
             Rover.last_mode= Rover.mode
             Rover.mode = Rover.next_mode
-            
+
             #Print current mode when changes 
             if Rover.last_mode != Rover.mode: 
                 print(Rover.mode)
-=======
 
->>>>>>> parent of 6a6936b... Turned off default output. Added next mode and last functionality
             # Execute the perception and decision steps to update the Rover's state
             Rover = perception_step(Rover)
             Rover = decision_step(Rover)

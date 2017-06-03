@@ -1,0 +1,263 @@
+[33mcommit 3c368eeb7bb92c2bae20a18e0553c594e58ce752[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Fri Jun 2 21:51:16 2017 -0400
+
+    rounding out
+
+[33mcommit e47319ff7de0ca3c6191f821eac35520d677c814[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Fri Jun 2 20:54:34 2017 -0400
+
+    Revert "Turned off default output. Added next mode and last functionality"
+    
+    This reverts commit 6a6936b74e10d3efca0aa8f044b2425e1ae20bf3.
+    
+    # Conflicts:
+    #       code/Rover_Project_Test_Notebook.ipynb
+    #       code/__pycache__/decision.cpython-35.pyc
+    #       code/__pycache__/supporting_functions.cpython-35.pyc
+    #       code/drive_rover.py
+
+[33mcommit 66e9a51a38d640c332dbf2f5a005482435a8f28a[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Fri Jun 2 20:09:23 2017 -0400
+
+    Tried a vector aproach to finding a sample
+    
+    Still no luck
+
+[33mcommit 0c2bdcd9d2c56cdca5d88906fc752ab55124a7da[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Fri Jun 2 00:05:39 2017 -0400
+
+    Trouble finding a rock
+
+[33mcommit 6a6936b74e10d3efca0aa8f044b2425e1ae20bf3[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Thu Jun 1 21:40:32 2017 -0400
+
+    Turned off default output. Added next mode and last functionality
+
+[33mcommit f3dfa58d9f1b0dd97d9d0e83b82c5269981a8b2e[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Wed May 31 22:50:08 2017 -0400
+
+    increased fidelity by restricting pixels
+
+[33mcommit 02fd716a4a7acc3ad3f35a2ee0c8a072e3e06f19[m
+Merge: 4523968 d3a53f8
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Wed May 31 16:55:55 2017 -0400
+
+    Merge remote-tracking branch 'refs/remotes/udacity/master'
+
+[33mcommit 4523968872ba2bb90bb8250c4ac294d886fd1734[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 22:43:38 2017 -0400
+
+    Created a Retreaving sample state
+
+[33mcommit 15dfecca564af3226a49d2c294739c0523b55c1e[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 21:13:13 2017 -0400
+
+    Refined find obsticales to increase fidelity
+
+[33mcommit 9a04cb0170f465f30f28069c31080fda33f23e05[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 20:43:28 2017 -0400
+
+    Fixed stop turns
+
+[33mcommit d3a53f84f89367ff63df9b20a23342a0ec234519[m
+Author: rykeenan <ryan.keenan@udacity.com>
+Date:   Tue May 30 16:11:43 2017 -0700
+
+    put throttle back into default decision_step() function
+
+[33mcommit cecdb04fdce87ce71b2a6123b41ac0b181640649[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 19:06:44 2017 -0400
+
+    Fixed the Supportin_function.py bug
+
+[33mcommit 1cc86f22fe489c1c93202d35f886e2ac41faec51[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 18:53:25 2017 -0400
+
+    Revert "Added some steering and a better way of turning around"
+    
+    This reverts commit 1a09cd07456cd0597c12507abc1a8fba8fb1f83f.
+
+[33mcommit bd478e09530a7c2a9d3c468fb61f852844757308[m
+Merge: 1a09cd0 a15425b
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 18:44:57 2017 -0400
+
+    Merge remote-tracking branch 'refs/remotes/udacity/master'
+    
+    # Conflicts:
+    #       code/__pycache__/decision.cpython-35.pyc
+    #       code/__pycache__/perception.cpython-35.pyc
+    #       code/__pycache__/supporting_functions.cpython-35.pyc
+    #       code/supporting_functions.py
+
+[33mcommit 1a09cd07456cd0597c12507abc1a8fba8fb1f83f[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 18:41:18 2017 -0400
+
+    Added some steering and a better way of turning around
+
+[33mcommit a15425b92b14c7239198bbae11b0c1a8e3e070b7[m
+Author: rykeenan <ryan.keenan@udacity.com>
+Date:   Tue May 30 14:06:07 2017 -0700
+
+    make various updates to do better rock pickup and counting
+
+[33mcommit b3c7976215b792151a501f70484a60aac7310be6[m
+Author: Matt Washburn <MattWBurn@gmail.com>
+Date:   Tue May 30 16:04:01 2017 -0400
+
+    Adjusted mappable bug
+
+[33mcommit 00bc4b180ba2e79b202a32a3d1b7d827ed3e7759[m
+Author: Matt Washburn <MattWBurn@gmail.com>
+Date:   Tue May 30 14:48:57 2017 -0400
+
+    Adjusted threshold to 100 to find road and ubstructions
+
+[33mcommit 83ae8ddd5f04010ec54344a3a32e910d62baa5ec[m
+Author: rykeenan <ryan.keenan@udacity.com>
+Date:   Tue May 30 10:27:36 2017 -0700
+
+    fix but in supporting_functions.py
+
+[33mcommit 698422869c172b1b915a1ce5e4246a3aebeb198e[m
+Author: Matt Washburn <MattWBurn@gmail.com>
+Date:   Tue May 30 12:20:38 2017 -0400
+
+    Added a right skew and adjusted stop to turn left
+
+[33mcommit f1c65773b031d8011db8db7b4424f58015b9e784[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 03:33:22 2017 -0400
+
+    picks up when stubbled upon sample
+
+[33mcommit 7fef7a7f901a49bc28300ac6fb054bdf6ba888c3[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 03:04:47 2017 -0400
+
+    Made it so if it senses its near a rock it will pick it up
+
+[33mcommit 027f26bf8758431f27cfe0ce1d4c2210da57ff74[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 02:53:10 2017 -0400
+
+    If the Rover is right in front of a sample it will pick it up then freeze
+
+[33mcommit a2c9dcaad256dd79b11d4dd008fed21e2f4ca88d[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 02:29:19 2017 -0400
+
+    Increased Fidelity. Accounted for Pitch and roll in stansforms
+    
+    # Conflicts:
+    #       code/__pycache__/supporting_functions.cpython-35.pyc
+
+[33mcommit b1c4ef6518bdc33903c62fdae197a3b2215fb9c3[m
+Merge: 073deee 54ff07b
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 01:39:05 2017 -0400
+
+    Revert "Added sample pickup and seek into decision.py"
+    
+    This reverts commit 073deee9abdb3eaf031d96395baf178d839a275e.
+
+[33mcommit 073deee9abdb3eaf031d96395baf178d839a275e[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Tue May 30 01:31:52 2017 -0400
+
+    Added sample pickup and seek into decision.py
+
+[33mcommit f98cc2ef72c63e97d6b85d196cee15397cf49269[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Mon May 29 22:20:55 2017 -0400
+
+    Rover is driving around!
+
+[33mcommit ea1cf2965393ced874f43b188eb48d9cc3a74cbe[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Mon May 29 20:56:15 2017 -0400
+
+    Loaded all code I know of up to perception.py
+    
+    Will begin to test current set up
+
+[33mcommit 43b072ceb8f63970a64c4e7a3b32e8594063369b[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Mon May 29 20:26:58 2017 -0400
+
+    updated Perception.py
+
+[33mcommit 1ea72d3861c95823c7a2b27778cde9a26f0a0539[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Mon May 29 20:23:53 2017 -0400
+
+    Changed some variable names in Rover_Project image to img
+
+[33mcommit 54ff07bf125cc6f5024cb2d89bf16ed1bc351961[m
+Author: rykeenan <ryan.keenan@udacity.com>
+Date:   Mon May 29 15:44:01 2017 -0700
+
+    comment out os.system() call in drive_rover.py that was causing a problem on windows
+
+[33mcommit 80ee9cd2ae452240b97d9edf5871cf523f3e2523[m
+Author: rykeenan <ryan.keenan@udacity.com>
+Date:   Mon May 29 15:05:49 2017 -0700
+
+    change supporting_functions.py to accommodate change in telemetry from , to ; separated lists and add convert_to_float() function
+
+[33mcommit 036c9ab870c7c0e9739a08d34e45c6ddcca773d8[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Mon May 29 16:16:04 2017 -0400
+
+    added functions to perception.py
+
+[33mcommit b7ca993890e3db4daa7ab359519b7fe17e715fc1[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Mon May 29 15:42:01 2017 -0400
+
+    Added a map to the botom right
+
+[33mcommit 88b1e1646e84751f9ac138abbc5e9d168fa649e1[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Mon May 29 14:47:18 2017 -0400
+
+    Adjusted count so that player would work
+
+[33mcommit 1c434d84e879e855e7cfc7cbb1a8719058b0be01[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Mon May 29 13:56:54 2017 -0400
+
+    Made new test data and completed telemetry functions
+
+[33mcommit 023f9bcce425682f200ea3363f94087a8241a551[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Mon May 29 13:27:48 2017 -0400
+
+    adjusted the input of the csv fiel
+
+[33mcommit e6eb4dd4a7ecd67891b233004cbaa897ce19f9eb[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Mon May 29 12:52:07 2017 -0400
+
+    Added highlight_rock function
+
+[33mcommit 99078d85fe25ed3da05f55e4bcc82017957690e5[m
+Author: iFoxbox <foxboxmw@gmail.com>
+Date:   Mon May 29 12:38:37 2017 -0400
+
+    Added find_ubstruction
+
+[33mcommit 6f893c

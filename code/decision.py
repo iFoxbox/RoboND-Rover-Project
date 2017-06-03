@@ -8,7 +8,7 @@ def trigger_stop(Rover):
     # Set brake to stored brake value
     Rover.brake = Rover.brake_set
     Rover.steer = 0
-    Rover.next_mode = 'stop'
+    Rover.mode = 'stop'
     
    
         
@@ -22,31 +22,23 @@ def decision_step(Rover):
     # Check if we have vision data to make decisions with
     if Rover.nav_angles is not None:
         # Check for Rover.mode status
-        if Rover.mode =='retrieving':
+        if Rover.mode =='retreaving':
             if len(Rover.rock_angles) >= Rover.stop_forward:  
                 # If mode is forward, navigable terrain looks good 
                 # and velocity is below max, then throttle 
-                if Rover.vel < Rover.max_vel:
+                if Rover.vel < Rover.max_vel /2:
                     # Set throttle value to throttle setting
                     Rover.throttle = Rover.throttle_set
                 else: # Else coast
                     Rover.throttle = 0
                 Rover.brake = 0
-            #steer to rock  
-           
-            vector = Rover.sample_pos - Rover.rockxy
-            angle = np.arctan2(vector[0], vector[1])
-            new_dir = angle - Rover.yaw    
-            Rover.steer = np.clip(np.mean(new_dir * 180/np.pi), -15, 15)
-            
-
-
+            #steer to rock     
+            Rover.steer = np.clip(np.mean(Rover.rock_angles * 180/np.pi), -15, 15) 
             if (len(Rover.nav_angles) < Rover.stop_forward) or Rover.near_sample:
                    trigger_stop(Rover)
-
                     
             
-        elif Rover.mode == 'forward': 
+        if Rover.mode == 'forward': 
             # Check the extent of navigable terrain
             if len(Rover.nav_angles) >= Rover.stop_forward:  
                 # If mode is forward, navigable terrain looks good 
@@ -65,8 +57,6 @@ def decision_step(Rover):
             elif (len(Rover.nav_angles) < Rover.stop_forward) or Rover.near_sample:
                 trigger_stop(Rover)
             
-          
-                
                 
         # If we're already in "stop" mode then make different decisions
         elif Rover.mode == 'stop':
@@ -95,7 +85,7 @@ def decision_step(Rover):
                     Rover.brake = 0
                     # Set steer to mean angle
                     Rover.steer = np.clip(np.mean(Rover.nav_angles * 180/np.pi), -15, 15)
-                    Rover.next_mode = 'forward'
+                    Rover.mode = 'forward'
     
                 #If a sample is pressent set grab flag 
                 if Rover.near_sample: 
