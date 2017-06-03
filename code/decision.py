@@ -34,12 +34,10 @@ def decision_step(Rover):
                 Rover.brake = 0
             #steer to rock  
            
-            vector = Rover.sample_pos - Rover.pos
+            vector = Rover.sample_pos - Rover.rockxy
             angle = np.arctan2(vector[0], vector[1])
-            new_dir = angle - Rover.yaw 
-            
-            if np.any(Rover.rock_angles[:] == 1):
-                Rover.steer = np.clip(np.mean(Rover.rock_angles * 180/np.pi), -15, 15)
+            new_dir = angle - Rover.yaw    
+            Rover.steer = np.clip(np.mean(new_dir * 180/np.pi), -15, 15)
             
 
 
@@ -67,10 +65,7 @@ def decision_step(Rover):
             elif (len(Rover.nav_angles) < Rover.stop_forward) or Rover.near_sample:
                 trigger_stop(Rover)
             
-            #This should run only if there is something to run
-            if np.any(Rover.rock_angles[:] == 1):
-                if len(Rover.rock_angles) >= 2:
-                    Rover.next_mode = 'retrieving'
+          
                 
                 
         # If we're already in "stop" mode then make different decisions
