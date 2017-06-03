@@ -54,14 +54,9 @@ class RoverState():
         self.rock_angles = None # Angles of rocks pixels
         self.rock_dists = None # Distances of rocks terrain pixels
         self.ground_truth = ground_truth_3d # Ground truth worldmap
-<<<<<<< HEAD
         self.mode = 'forward' # Current mode 
         self.last_mode = 'forward' #Last mode the rover was in before this run
-        self.next_mode = 'forward' #The mode that will be assigned to current mode next round
-       
-=======
-        self.mode = 'forward' # Current mode (can be forward or stop)
->>>>>>> parent of 6a6936b... Turned off default output. Added next mode and last functionality
+        self.next_mode = 'forward' #The mode that will be assigned to current mode next roun
         self.throttle_set = 0.2 # Throttle setting when accelerating
         self.brake_set = 10 # Brake setting when braking
         # The stop_forward and go_forward fields below represent total count
@@ -124,6 +119,7 @@ def telemetry(sid, data):
             #Print current mode when changes 
             if Rover.last_mode != Rover.mode: 
                 print(Rover.mode)
+
 
             # Execute the perception and decision steps to update the Rover's state
             Rover = perception_step(Rover)
