@@ -32,14 +32,17 @@ I preformed my analysis on the following image. I choose this capture to perform
 I first created the find_ubstruction() function to take the image given and find any terrain that could not be driven on. 
 This function was created to be like color_thresh(), but instead of masking the dark spectrum of RGB it masked the lighter side. 
 This provided me with the following mask.
+
 ![alt text][image4]
 
 I then created highlight_rock(). This function creates a threshold highlighting the gold of the rock samples by masking out any RGB values not to be in the "goldish" color range. 
 I found a good upper limit to be (255,255,75) and a lower limit of (100,100,0). The result is seen below. 
+
 ![alt text][image6]
 
 After working on the project for a time I found that my fidelity was low. I guessed some of it was because of how my find_ubstruction() was being handled. 
 I redesigned it to re_find_ubstruction() which has an upper and lower limit like highlight_rock(). This allowed me to get rid of the pixels it thought was unnavigable that was to the left and right.
+
 ![alt text][image5]
 
 #### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a world map.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
@@ -66,16 +69,19 @@ If the number of pixels starts to drop off and reach a minimum the rover will tr
 If the Rover happens to stop in front of a rock sample it will attempt to pick it up.
 
 #### 2. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
-After making the changes to perception.py I found that the rover was able to map the terrain with a fidelity 75% consistently. 
-I could improve this by making the perspective transform take account for pitch and roll. I could improve the decision.py 
-by adding a feature to tell how close to a wall it has seen and try to stay close to it. Mapping the closed perimeter of the map. 
+After making the changes to perception.py I found that the rover was able to map more then 40% of the terrain with a fidelity 75% consistently. 
+
+
+
 
 **Simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
 I am running the Roversim at a resolution of 1152 x 864. Graphics quality is set to Fantastic. The FPS I am getting is 30-39 FPS. 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+
+I could improve this by making the perspective transform take account for pitch and roll. I could improve the decision.py 
+by adding a feature to tell how close to a wall it has seen and try to stay close to it. Mapping the closed perimeter of the map. 
 
 
 
-![alt text][image3]
+
 
 
