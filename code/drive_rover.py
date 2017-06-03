@@ -56,10 +56,14 @@ class RoverState():
         self.rockxy = None
         
         self.ground_truth = ground_truth_3d # Ground truth worldmap
+<<<<<<< HEAD
         self.mode = 'forward' # Current mode 
         self.last_mode = None #Last mode the rover was in before this run
         self.next_mode = 'forward' #The mode that will be assigned to current mode next round
        
+=======
+        self.mode = 'forward' # Current mode (can be forward or stop)
+>>>>>>> parent of 6a6936b... Turned off default output. Added next mode and last functionality
         self.throttle_set = 0.2 # Throttle setting when accelerating
         self.brake_set = 10 # Brake setting when braking
         # The stop_forward and go_forward fields below represent total count
@@ -106,8 +110,7 @@ def telemetry(sid, data):
         fps = frame_counter
         frame_counter = 0
         second_counter = time.time()
-        
-    #print("Current FPS: {}".format(fps))
+    print("Current FPS: {}".format(fps))
 
     if data:
         global Rover
@@ -115,6 +118,7 @@ def telemetry(sid, data):
         Rover, image = update_rover(Rover, data)
 
         if np.isfinite(Rover.vel):
+<<<<<<< HEAD
             #Update the mode of the rover
             Rover.last_mode= Rover.mode
             Rover.mode = Rover.next_mode
@@ -122,6 +126,9 @@ def telemetry(sid, data):
             #Print current mode when changes 
             if Rover.last_mode != Rover.mode: 
                 print(Rover.mode)
+=======
+
+>>>>>>> parent of 6a6936b... Turned off default output. Added next mode and last functionality
             # Execute the perception and decision steps to update the Rover's state
             Rover = perception_step(Rover)
             Rover = decision_step(Rover)
