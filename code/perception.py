@@ -155,7 +155,7 @@ def perception_step(Rover):
     
     #Filter out anything past 4m. The image is inacurate
     ubstruction[:][0:110] =0 
-    rock_found[:][0:110] =0
+    #rock_found[:][0:110] =0
     driveable[:][0:110] =0
 
     # 5) Convert map image pixel values to rover-centric coords
